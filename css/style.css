@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-family: 'Poppins', sans-serif;
+    font-size: 62.5%;  /* 1rem = 10px */
+
+    --Red: hsl(0, 100%, 74%);
+    --Green: hsl(154, 59%, 51%);
+
+    --Blue: hsl(248, 32%, 49%);
+
+    --DarkBlue: hsl(249, 10%, 26%);
+    --GrayishBlue: hsl(246, 25%, 77%);
+}
+
+/* MOBILE FIRST */
+
+body {
+    background-color: var(--Red);
+    background-image: url(../images/bg-intro-mobile.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.main {
+    max-width: 37.5rem;
+    margin: 10px auto;
+    padding: 2.5rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.main p {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: white;
+    text-align: center;
+    margin-bottom: 6rem;
+}
+
+.main .firstButton {
+    width: 100%;
+    background-color: var(--Blue);
+
+    text-align: center;
+    font-size: 1.6rem;
+    color: white;
+    font-weight: 400;
+
+    padding-block: 1.5rem;
+    padding-inline: 3rem;
+    margin-bottom: 4rem;
+
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 1px 15px 10px rgba(0, 0, 0, 0.3);
+
+    cursor: pointer;
+}
+
+.main .firstButton span {
+    font-weight: 600;
+}
+
+.main .form {
+    width: 100%;
+    background-color: white;
+
+    border-radius: 1rem;
+    box-shadow: 1px 15px 10px rgba(0, 0, 0, 0.3);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+
+    padding: 1.5rem;
+}
+
+.main .form .form-control {
+    width: 100%;
+    position: relative;
+}
+
+.main .form input {
+    width: 100%;
+    padding-block: 1rem;
+    padding-left: 1rem;
+
+    color: var(--DarkBlue);
+    font-weight: 600;
+    font-size: 1.6rem;
+
+    outline: 1px solid var(--GrayishBlue);
+    border: none;
+    border-radius: 0.5rem;
+}
+
+.main .form input:focus {
+    outline: 2px solid var(--DarkBlue);
+}
+
+.form-control.erro input {
+    outline: 2px solid var(--Red);
+}
+
+.form-control.success input {
+    outline: 2px solid var(--Green);
+}
+
+.main .form .form-control .img-erro {
+    width: 0%;
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    visibility: hidden;
+}
+
+.main .form .form-control.erro .img-erro {
+    visibility: visible;
+}
+
+.main .form .form-control .paragraph {
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: right;
+    margin-bottom: 1.5rem;
+    visibility: hidden;
+}
+
+.main .form .form-control.erro .paragraph {
+    color: var(--Red);
+    visibility: visible;
+}
+
+.main .form .secondButton  {
+    width: 100%;
+    background-color: var(--Green);
+    padding-block: 2rem;
+    padding-inline: 1rem;
+
+    font-weight: 600;
+    font-size: 1.6rem;
+    color: white;
+
+    border: none;
+    border-radius: 1rem;
+
+    margin-bottom: 2rem;
+
+    cursor: pointer;
+}
+
+.main .form p {
+    color: var(--DarkBlue);
+    font-size: 1.3rem;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.main .form p span {
+    color: var(--Red);
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.attribution { 
+    font-size: 1.1rem; 
+    text-align: center; 
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+/* DESKTOP */
+
+@media(min-width: 1024px) {
+    body {
+        background-image: url(../images/bg-intro-desktop.png);
+    }
+
+    .main {
+        max-width: 100rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "colunaA colunaB";
+        gap: 10rem;
+    }
+
+    .colunaA {
+        grid-area: colunaA;
+    }
+
+    .colunaB {
+        grid-area: colunaB;
+    }
+
+    .main .colunaA p {
+        margin-bottom: 0;
+    }
+}
